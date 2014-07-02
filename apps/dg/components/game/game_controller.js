@@ -197,6 +197,10 @@ DG.GameController = DG.ComponentController.extend(
       shouldDirtyDocument = false;
       break;
     
+    case 'reset':
+      ret = this.handleReset( cmdObj.args);
+      break;
+
     /*
      * Old API
      */
@@ -538,7 +542,27 @@ DG.GameController = DG.ComponentController.extend(
       var preserveAllGameCasesOption = iArgs && iArgs.preserveAllGames,
           preserveOpenEventCasesOption = iArgs && iArgs.preserveOpenEvents;
       return this.doDeleteAllCaseData( preserveAllGameCasesOption, ! preserveOpenEventCasesOption );
-   },
+  },
+
+  /**
+      Reset CODAP
+      Close/destroy the current document and open a new document
+   */
+  handleReset: function( iArgs) {
+
+    // TODO: Close graph and table view automatically before reset
+    // It is possible to destroy all views using:
+    // DG.mainPage.closeAllComponents();
+    // But, we want to close only specific components (table and graph view)
+
+    // Destroy the document and its contents
+    DG.currDocumentController().closeDocument();
+    DG.store = null;
+
+    // Create a new empty document
+    DG.currDocumentController().setDocument( DG.currDocumentController().createDocument());
+
+  },
 
   /**
    Delete all case data (except data linked to the currently open game case).
