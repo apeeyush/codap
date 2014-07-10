@@ -46,7 +46,7 @@ DG.logToServer = function( iLogMessage, iProperties, iMetaArgs) {
 */
 DG.authorizationController = SC.Controller.create( (function() {
   var serverUrl = function(iRelativeUrl) {
-    return '/DataGames/api/' + iRelativeUrl;
+    return '/api/' + iRelativeUrl;
   };
 
 return {
@@ -391,27 +391,28 @@ return {
                                         be passed on to the logToServer function as the meta-args.
    */
   logToServer: function(iMessage, iProperties, iMetaArgs) {
-    var shouldLog = this.getPath('currLogin.isLoggingEnabled') ||
-                    (iMetaArgs && iMetaArgs.force);
-    if( !shouldLog) {
-      // The logging path below indirectly triggers SproutCore notifications.
-      // Calling SC.run() allows the same notifications to get triggered without the logging.
-      SC.run();
-      return;
-    }
+   //  Disable logging for Data Analytics platform.
+   //  var shouldLog = this.getPath('currLogin.isLoggingEnabled') ||
+   //                  (iMetaArgs && iMetaArgs.force);
+   //  if( !shouldLog) {
+   //    // The logging path below indirectly triggers SproutCore notifications.
+   //    // Calling SC.run() allows the same notifications to get triggered without the logging.
+   //    SC.run();
+   //    return;
+   //  }
     
-    var nowTime = new Date();
-    this.currLogin.incrementProperty('logIndex');
-    var body = SC.mixin({ username: this.getPath('currLogin.user') || ""
-                        , sessionID: this.getPath('currLogin.sessionID') || 0
-                        , sessionIndex: this.getPath('currLogin.logIndex') || 0
-                        , type: 'LOG'
-                        , localTime: nowTime.toString()
-                        , message: iMessage
-          }, iProperties || {});  // Mix in the specified iProperties
+   //  var nowTime = new Date();
+   //  this.currLogin.incrementProperty('logIndex');
+   //  var body = SC.mixin({ username: this.getPath('currLogin.user') || ""
+   //                      , sessionID: this.getPath('currLogin.sessionID') || 0
+   //                      , sessionIndex: this.getPath('currLogin.logIndex') || 0
+   //                      , type: 'LOG'
+   //                      , localTime: nowTime.toString()
+   //                      , message: iMessage
+   //        }, iProperties || {});  // Mix in the specified iProperties
 
-    this.postServerUrlJSON('log/save')
-        .send(body);
+   // this.postServerUrlJSON('log/save')
+   //     .send(body);
   },
   
   requireLogin : function() {

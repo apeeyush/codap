@@ -31,3 +31,8 @@ end
 
 # proxy for local dev.
 proxy '/DataGames', :to => 'dg.ccssgames.com'
+
+# # proxy for local dev with log-manager
+# proxy '/DataGames', :to => 'localhost:3000'
+# proxy '/api', :to => 'localhost:3000'
+# proxy '/analytics', :to => 'localhost:3000'
