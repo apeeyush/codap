@@ -1,7 +1,7 @@
 // ==========================================================================
 //                                DG
 //
-//  DG is the namespace for all of the Data Games JavaScript code.
+//  DG is the namespace for all of the CODAP(formerly Data Games) JavaScript code.
 //
 //  Copyright (c) 2014 by The Concord Consortium, Inc. All rights reserved.
 //
@@ -35,7 +35,7 @@ if(!Object.keys) Object.keys = function(o) {
 };
 
 /*
-Function.prototype.bind is a method introduced in ECMAscript 262-5 which allows
+Function.prototype.bind is a method introduced in ECMAScript 262-5 which allows
 changes to the running context of a function  (i.e. the 'this' variable)
 
 This extension provides .bind functionality in browsers (ex. Safari) which haven't
@@ -199,7 +199,7 @@ DG = SC.Application.create( (function() // closure
   /*
    * Build number
    */
-  BUILD_NUM: '0252',
+  BUILD_NUM: '0253',
 
   /**
    * The subdomain for the Drupal site which must be hosted on the same domain.  This is used for various interactions
@@ -277,8 +277,21 @@ DG = SC.Application.create( (function() // closure
      *  The default is 'no'.
      */
   componentMode: getUrlParameter('componentMode', 'no'),
-  
-  /**
+
+    toolButtons: [
+      'fileMenu',
+      'gameMenu',
+      'tableButton',
+      'graphButton',
+      'mapButton',
+      'sliderButton',
+      'calcButton',
+      'textButton',
+      'optionButton',
+      'guideButton'
+    ],
+
+    /**
     More useful alternative to JavaScript built-in typeof operator.
     From http://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/
    */
