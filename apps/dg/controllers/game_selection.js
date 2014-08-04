@@ -45,14 +45,8 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
 
     DG.GameSpec.create({
       name: 'DataInteractive',
-      dimensions: { width: 650, height: 550 },
+      dimensions: { width: 700, height: 600 },
       url: 'data_interactive/index'
-    }),
-
-    DG.GameSpec.create({
-      name: 'Analytics',
-      dimensions: { width: 650, height: 550 },
-      url: 'analytics/index'
     })
 
   ],  // end of baseGames
