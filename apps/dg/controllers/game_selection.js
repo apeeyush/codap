@@ -30,7 +30,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   var kDefaultGameIndex = 0;  // 0-based index into 'games' array below
 
   return {  // return from closure
-  
+
   /**
    * Array of available games.
    * @property {Array of DG.[Base]GameSpec}
@@ -51,341 +51,14 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
 
   ],  // end of baseGames
 
-  //   DG.GameSpec.create({
-  //     name: "Cart Weight",
-  //     dimensions: { width: 290, height: 350 },
-  //     url: 'DataGames/JavaScriptGames/CartWeight/index.html'
-  //   }),
 
-  //   DG.GameSpec.create({
-  //     name: "Proximity",
-  //     dimensions: { width: 463, height: 344 },
-  //     url: 'DataGames/JavaScriptGames/Proximity/index.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: "Shuffleboard",
-  //     dimensions: { width: 520, height: 348 },
-  //     url: 'DataGames/JavaScriptGames/Shuffleboard/index.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: "Markov",
-  //     dimensions: { width: 550, height: 315 },
-  //     url: 'DataGames/JavaScriptGames/Markov/index.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: "Lunar Lander",
-  //     dimensions: { width: 357, height: 541 },
-  //     url: 'DataGames/JavaScriptGames/LunarLander/index.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: "Floyd's of Fargo",
-  //     dimensions: { width: 590, height: 431 }, // for better initial loading; matches FlydsFargo.?
-  //     url: 'DataGames/JavaScriptGames/FloydsFargo/index.html'
-  //   })
-  // ],  // end of baseGames
-
-  // srriGames: [
-  //   DG.BaseGameSpec.create({ name: null, isSeparator: true }),
-
-  //   DG.GameSpec.create({
-  //     name: 'Chainsaw',
-  //     dimensions: { width: 745, height: 410 }, // for better initial loading; matches Chainsaw.mxml/.html
-  //     url: 'DataGames/FlashGames/ChainSaw.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: 'Ship Odyssey',
-  //     dimensions: { width: 518, height: 410 }, // for better initial loading; matches ShipOdyssey.mxml/.html
-  //     url: 'DataGames/FlashGames/ShipOdyssey.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: 'Inference Games',
-  //     dimensions: { width: 575, height: 325 },  // for better initial loading; matches InferenceGames.mxml/.html
-  //     url: 'DataGames/FlashGames/InferenceGames.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: 'Crop Monster',
-  //     dimensions: { width: 800, height: 600 },  // for better initial loading; matches CropMonster.mxml/.html
-  //     url: 'DataGames/FlashGames/CropMonster.html'
-  //   }),
-
-  //   DG.GameSpec.create({
-  //     name: 'Rock Roll',
-  //     dimensions: { width: 800, height: 400 },  // for better initial loading; matches RockRoll.mxml/.html
-  //     url: 'DataGames/FlashGames/RockRoll.html'
-  //   })
-
-  //   DG.GameSpec.create({
-  //     name: 'Inference',
-  //     dimensions: { width: 575, height: 325 },  // for better initial loading; matches InferenceGames.mxml/.html
-  //     url: 'DataGames/FlashGames/InferenceGames.html'
-  //   })
-
-  // ],  // end of SRRI games
-
-  /**
-   * Array of games available only when hosted URL contains "localhost" or "dg-dev"
-   * @property {Array of DG.[Base]GameSpec}
-   */
-  // devGames: [
-
-  //   DG.BaseGameSpec.create({ name: null, isSeparator: true }),
-  //   DG.BaseGameSpec.create({ name: "*** DEV BUILD ONLY ***", isEnabled: false }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Find the Spy',
-    //   collectionName: 'Readings',
-    //   eventsAttributeName: 'reading',
-    //   parentCollectionName: 'Games',
-    //   xAttrName: "place",
-    //   yAttrName: "signal",
-    //   dimensions: {
-    //     width: 900,
-    //     height: 300
-    //   },
-    //   url: 'DataGames/FlashGames/FindTheSpy1D.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Cruising',
-    //   collectionName: 'DriveRecord',
-    //   eventsAttributeName: 'drive_record',
-    //   parentCollectionName: 'Try',
-    //   xAttrName: "time",
-    //   yAttrName: "position",
-    //   dimensions: {
-    //     width: 500,
-    //     height: 412
-    //   },
-    //   url: 'DataGames/FlashGames/Cruising.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Alien Power Plant',
-    //   collectionName: 'PowerPlant',
-    //   eventsAttributeName: 'power_plant',
-    //   parentCollectionName: 'Games',
-    //   xAttrName: "time",
-    //   yAttrName: "OutRate",
-    //   dimensions: {
-    //     width: 680,
-    //     height: 400
-    //   },
-    //   url: 'DataGames/FlashGames/AlienPowerPlant.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Weasels',
-    //   collectionName: 'Weasels',
-    //   eventsAttributeName: 'weasel',
-    //   parentCollectionName: 'Games',
-    //   xAttrName: "length",
-    //   yAttrName: "mass",
-    //   dimensions: {
-    //     width: 372,
-    //     height: 250
-    //   },
-    //   url: 'DataGames/FlashGames/Weasels.html'
-    // }),
-
-    // DG.BaseGameSpec.create({ name: null, isSeparator: true }),
-
-    // DG.GameSpec.create({
-    //   name: "Wheel",
-    //   dimensions: { width: 600, height: 374 },
-    //   url: 'DataGames/FlashGames/Wheel.html'
-    // }),
-    
-    // DG.GameSpec.create({
-    //   name: "Lunar Lander [eeps]",
-    //   dimensions: { width: 425, height: 550 },
-    //   // Anything in DataGames/Games/External/ is proxied to
-    //   // http://www.eeps.com/dataGames/DGGames/
-    //   url: 'DataGames/Games/External/LunarLander/index.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: "Floyd's of Fargo [eeps]",
-    //   dimensions: { width: 580, height: 520 },
-    //   // External URL for testing and development of games.
-    //   // Anything in DataGames/Games/External/ is proxied to
-    //   // http://www.eeps.com/dataGames/DGGames/
-    //   url: 'DataGames/Games/External/FloydsFargo/index.html'
-    // }),
-    
-    // DG.GameSpec.create({
-    //   name: "RoboBall",
-    //   dimensions: { width: 700, height: 500 },
-    //   // Anything in DataGames/Games/External/ is proxied to
-    //   // http://www.eeps.com/dataGames/DGGames/
-    //   url: 'DataGames/FlashGames/RoboBall.html'
-    // }),
- 
-    // DG.GameSpec.create({
-    //   name: "Prox (test short)",
-    //   dimensions: { width: 800, height: 380 },
-    //   url: 'DataGames/FlashGames/Prox.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: "FruitMagnate",
-    //   dimensions: { width: 424, height: 400 },
-    //   url: 'DataGames/FlashGames/FruitMagnate.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: "Sample",
-    //   dimensions: { width: 600, height: 300 },
-    //   url: 'DataGames/FlashGames/Sample.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: "Rallye",
-    //   dimensions: { width: 540, height: 475 },
-    //   url: 'DataGames/JavaScriptGames/Rallye/index.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: "Rallye [eeps]",
-    //   dimensions: { width: 540, height: 475 },
-    //   url: 'DataGames/Games/External/Rallye/index.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: "Treasure Hunt [eeps]",
-    //   collectionName: 'Events',
-    //   eventsAttributeName: 'game',
-    //   parentCollectionName: 'Games',
-    //   dimensions: {
-    //     width: 540,
-    //     height: 475
-    //   },
-    //   // External URL for testing and development of games.
-    //   // Anything in DataGames/Games/External/ is proxied to
-    //   // http://www.eeps.com/dataGames/DGGames/
-    //   url: 'DataGames/Games/External/TreasureHunt/index.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Guess My Number',
-    //   dimensions: { width: 400, height: 250 },
-    //   url: 'DataGames/JavaScriptGames/GuessMyNumber.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Importer',
-    //   dimensions: { width: 750, height: 450 },
-    //   url: 'DataGames/JavaScriptGames/Importer/Importer.html',
-    //   contextType: 'DG.DataContext'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Sampler',
-    //   dimensions: { width: 400, height: 300 },
-    //   url: 'DataGames/JavaScriptGames/Sampler/Sampler.html',
-    //   contextType: 'DG.DataContext'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Analytics',
-    //   dimensions: { width: 450, height: 400 },
-    //   url: 'DataGames/JavaScriptGames/Analytics/Analytics.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'DataInteractive',
-    //   dimensions: { width: 450, height: 400 },
-    //   url: 'DataInteractive/Analytics.html'
-    // })
-
-    // DG.GameSpec.create({
-    //   name: 'Sketchpad',
-    //   dimensions: { width: 550, height: 500 },
-    //   url: 'DataGames/Games/DN/experiments/websketchpad/target/websketchpad/GSP_DG.html'
-    //   //url: 'DataGames/JavaScriptGames/GSP_DG/GSP_DG.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //     name: 'Performance Harness',
-    //     dimensions: { width: 400, height: 250 },
-    //     url: 'DataGames/JavaScriptGames/PerformanceHarness.html'
-    // }),
-
-    //---- Games in DataGames/Games/WaffleSRRI/ are proxied to
-    // http://waffle.srri.umass.edu/datagames
-    // a.k.a.  ssh://waffle.srri.umass.edu/Groups/gamelab/datagames-public
-    // see www-root/Games/.htaccess
-
-    // DG.BaseGameSpec.create({ name: "*** on waffle.srri.umass.edu ***", isEnabled: false }),
-
-    // DG.GameSpec.create({
-    //   name: 'Chainsaw [waffle.srri flash]',
-    //   dimensions: { width: 745, height: 410 }, // for better initial loading; matches Chainsaw.mxml/.html
-    //   url: 'DataGames/Games/WaffleSRRI/flash/Chainsaw.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Ship Odyssey [waffle.srri flash]',
-    //   dimensions: { width: 518, height: 410 }, // for better initial loading; matches ShipOdyssey.mxml/.html
-    //   url: 'DataGames/Games/WaffleSRRI/flash/ShipOdyssey.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Crop Monster [waffle.srri flash]',
-    //   dimensions: { width: 800, height: 600 },  // for better initial loading; matches CropMonster.mxml/.html
-    //   url: 'DataGames/Games/WaffleSRRI/flash/CropMonster.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Rock Roll [waffle.srri flash]',
-    //   dimensions: { width: 800, height: 400 },  // for better initial loading; matches RockRoll.mxml/.html
-    //   url: 'DataGames/Games/WaffleSRRI/flash/RockRoll.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Rat Packing [waffle.srri flash]',
-    //   dimensions: {
-    //     width: 600,
-    //     height: 454
-    //   },
-    //   url: 'DataGames/Games/WaffleSRRI/flash/RatPacking.html'
-    // }),
-
-    // DG.BaseGameSpec.create({
-    //   name: 'Chainsaw [waffle.srri javascript]',
-    //   collectionName: 'CutPieces',
-    //   eventsAttributeName: 'Cut_Record',
-    //   parentCollectionName: 'Games',
-    //   xAttrName: "PieceNumber",
-    //   yAttrName: "Length",
-    //   dimensions: {
-    //     width: 630,
-    //     height: 575
-    //   },
-    //   url: 'DataGames/Games/WaffleSRRI/javascript/ChainSaw/index.html'
-    // }),
-
-    // DG.GameSpec.create({
-    //   name: 'Inference Games [waffle.srri flash]',
-    //   dimensions: { width: 575, height: 325 },  // for better initial loading; matches InferenceGames.mxml/.html
-    //   url: 'DataGames/Games/WaffleSRRI/flash/InferenceGames.html'
-    // })
-
-  // ], // end of devGames array
-  
   /**
    * The currently selected game.
    *  Defaults to the game at index 'kDefaultGameIndex' in the 'games' array.
    * @property {DG.GameSpec}
    */
   currentGame: null,
-  
+
   /**
    * [Computed] The name of the currently selected game.
    * @property {String}
@@ -393,14 +66,14 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   currentName: function() {
     return this.getPath('currentGame.name');
   }.property('currentGame').cacheable(),
-  
+
   /**
    * Dimensions requested by the client setting the current game,
    * e.g. after restoring a document with user-set dimensions.
    * @property {Object}
    */
   requestedDimensions: null,
-  
+
   /**
    * [Computed] The dimensions of the currently selected game {width,height}.
    * @property {Object}
@@ -408,7 +81,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   currentDimensions: function() {
     return this.getPath('currentGame.dimensions');
   }.property('currentGame').cacheable(),
-  
+
   /**
    * [Computed] The URL of the currently selected game.
    * @property {String}
@@ -416,18 +89,18 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   currentUrl: function() {
     return this.getPath('currentGame.url');
   }.property('currentGame').cacheable(),
-  
+
   /**
    *  The DataContext for the currently selected game.
    *  @property {DG.DataContext} or a derived class
    */
   currentContext: function() {
-    // We don't call DG.GameContext.getContextForGame() because we don't want 
+    // We don't call DG.GameContext.getContextForGame() because we don't want
     // to force creation here. Otherwise, setting the context to null (e.g. when
     // closing the document) can result in immediate creation of new contexts.
     return this.getPath('currentGame.context');
   }.property('currentGame','currentGame.context'),
-  
+
   /**
    * [Computed] The collection associated with the currently selected game.
    * @property {DG.Collection}
@@ -436,13 +109,13 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   //  var collectionName = this.getPath('currentGame.collectionName');
   //  return DG.collectionWithName(collectionName);
   //}.property('currentGame').cacheable(),
-  
+
   /**
    * Game selection menu.
    * @property {SC.MenuPane}
    */
   menuPane: null,
-  
+
   /**
    * Initialization function.
    */
@@ -454,11 +127,11 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
               itemTitleKey: 'name',
               layout: { width: 200/*, height: 200*/ }
             });
-    
+
     // Specify the default game
     this.setDefaultGame();
   },
-  
+
   /**
     Appends the specified game specifications to the beginning of the games menu.
     This allows documents which reference games that are not in the current games menu
@@ -472,9 +145,9 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
     this.games = newGames;
     this.menuPane.set('items', newGames);
   },
-  
+
   buildGamesMenu: function( iShowSrriGames, iShowDevGames) {
-  
+
     this.games = [];
 
     // Add any entries specified as URL parameters
@@ -492,22 +165,22 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
       if( this.games.length > 0)
         this.games.push( DG.BaseGameSpec.create({ name: null, isSeparator: true }));
     }
-  
+
     this.games = this.games.concat( this.get('baseGames'));
-    
+
     if( iShowSrriGames || iShowDevGames )
       this.games = this.games.concat( this.get('srriGames'));
-    
+
     if( iShowDevGames)
       this.games = this.games.concat( this.get('devGames'));
   },
-  
+
   loginDidChange: function() {
     var isDeveloper = DG.authorizationController.get('isUserDeveloper');
     this.buildGamesMenu( DG.IS_SRRI_BUILD || isDeveloper, DG.IS_DEV_BUILD || isDeveloper);
     this.menuPane.set('items', this.games);
   }.observes('DG.authorizationController.isUserDeveloper'),
-  
+
   /**
     Loads the specified game as the default game for a new document.
     Attempts to determine a default game by the following means:
@@ -541,7 +214,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
       this.endPropertyChanges();
     }
   },
-  
+
   /**
     Observer method called whenever the 'currentGame' property is changed.
    */
@@ -550,7 +223,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
     if( DG.currGameController)
       DG.currGameController.set('gameIsReady', false);
   }.observes('currentGame'),
-   
+
   /**
    * Action method for game selection menu.
    *  Called when the user selects a game from the menu.
@@ -574,14 +247,14 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
         this.notifyPropertyChange('currentGame');
         return;
       }
-      
+
       // Clear the menu item so it can be selected again, if necessary.
       this.setPath('menuPane.selectedItem', null);
-      
+
       DG.appController.closeDocumentWithConfirmation( selectedGameName);
     }
   }.observes('.menuPane.selectedItem'),
-  
+
   /**
     Sets the current game to the DG.[Base]GameSpec that matches the specified game name.
     @param  {String}  iGameName   The name of the game to set as the current game
@@ -690,7 +363,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
                         });
     this.menuPane.set('selectedItem', null);
   },
-  
+
   /**
     Returns the DG.[Base]GameSpec for the specified game name.
     Returns null if no matching game is found.
@@ -720,7 +393,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
       });
     }
   },
-  
+
   /**
     [Old API] Fill out the DG.BaseGameSpec fields from the arguments passed to the
     'newCollectionWithAttributes' command. In the old API, this code must infer some
@@ -730,7 +403,7 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
     // Make sure we have a current game
     var currentGame = this.get('currentGame');
     if( !currentGame) return;
-    
+
     // Extract the cmd args we'll be using
     var collectionName = iCmdArgs.name,
         childrenName = iCmdArgs.children,
@@ -744,23 +417,23 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
         currentGame.collections.push( collectionName);
 
       switch( currentGame.collections.length) {
-      
+
       case 1:
         // Extract the parent collection name if we don't already know it
         if( SC.empty( currentGame.parentCollectionName))
           currentGame.parentCollectionName = collectionName;
         break;
-      
+
       case 2:
         // Extract the events collection name if we don't already know it
         if( SC.empty( currentGame.collectionName))
           currentGame.collectionName = collectionName;
         break;
-      
+
       default:
       }
     }
-    
+
     // Extract the name of the events attribute (which links to the child cases)
     if( SC.empty( currentGame.eventsAttributeName) && !SC.empty( childrenName))
       currentGame.eventsAttributeName = childrenName;
@@ -773,5 +446,5 @@ DG.gameSelectionController = SC.ObjectController.create((function() // closure
   }
 
   }; // end return from closure
-  
+
 }())) ; // end closure

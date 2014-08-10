@@ -110,6 +110,15 @@ SC.Record.ignoreUnknownProperties = true;
  */
 SC.RecordArray.QUERY_MATCHING_THRESHOLD = 10000;
 
+SC.XHRResponse.prototype.oldCreateRequest = SC.XHRResponse.prototype.createRequest;
+SC.XHRResponse.prototype.createRequest = function() {
+  var rawRequest = this.oldCreateRequest();
+  if ("withCredentials" in rawRequest) {
+    rawRequest.withCredentials = true;
+  }
+  return rawRequest;
+};
+
 /** @namespace
 
  A web app prototype for the DataGames project.
@@ -200,7 +209,7 @@ DG = SC.Application.create((function () // closure
     /*
      * Build number
      */
-    BUILD_NUM: '0256',
+    BUILD_NUM: '0257',
 
     /**
      * The subdomain for the Drupal site which must be hosted on the same domain.  This is used for various interactions
@@ -271,6 +280,13 @@ DG = SC.Application.create((function () // closure
      * on startup.  It is the username of the owner of the document in the database.
      */
     startingDocOwner: getUrlParameter('owner'),
+
+    /**
+     * documentServer can be passed as a Url parameter named documentServer. It is the server from which DG will use to open/save
+     * documents. It should be formatted as a full url, to which 'document/*' will be appended.
+     * ex: 'http://docs.example.com/'
+     */
+  documentServer: getUrlParameter('documentServer') || '',
 
     /**
      * componentMode can be passed as a Url parameter named tools with values 'yes' or 'no'.
